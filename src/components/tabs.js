@@ -27,7 +27,7 @@ const Tabs = (topics) => {
 
     div.appendChild(item);
     console.log("something");
-  } )
+  })
 
   return div;
 }
@@ -42,11 +42,11 @@ const tabsAppender = (selector) => {
   //
   const api = axios.get('https://lambda-times-api.herokuapp.com/topics')
   api.then( (res) => {
-    document.querySelector(selector).appendChild( Tabs(res.data.topics) );
-  } )
-  api.catch( (error) => {
+    document.querySelector(selector).appendChild( Tabs(res.data.topics));
+  })
+  api.catch( (err) => {
     console.log(error);
-  } )
+  })
 }
 
 export { Tabs, tabsAppender }
